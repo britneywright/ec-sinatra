@@ -1,5 +1,5 @@
-Github Ratelimit Remaining: <%= Github.ratelimit_remaining %>
+Github Ratelimit Remaining: <%= github.ratelimit_remaining %>
 <br />
-<%= @repos.map(&:name) %>
+<%= github.exercism_repos.map(&:name).join(", ") %>
 <br />
-<%= @contributors.map(&:login) %>
+<%= github.exercism_contributors.map(&:login).join(", ") %>
