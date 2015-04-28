@@ -1,6 +1,6 @@
 require_relative 'app'
 
-which_github = :fake
+which_github = :httparty
 
 class InjectGithub
   def initialize(app, github)
@@ -20,10 +20,9 @@ when :fake
 when :query_api
   require_relative 'lib/real_github'
   use InjectGithub, RealGithub.new
-when :load_from_db
-  # this is made up :)
-  require_relative 'lib/database_github'
-  use InjectGithub, DatabaseGithub.new
+when :httparty
+  require_relative 'lib/httparty'
+  use InjectGithub, HTTPartyGithub.new
 end
 
 run App

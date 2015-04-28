@@ -1,12 +1,9 @@
 require 'sinatra/base'
 require 'pry'
+require 'thin'
 require 'rerun'
-require 'rack/cache'
-require 'faraday-http-cache'
-require 'active_support/all'
 
 class App < Sinatra::Base
-  use Rack::Cache
 
   helpers do
     def github

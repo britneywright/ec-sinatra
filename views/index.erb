@@ -1,5 +1,4 @@
 Github Ratelimit Remaining: <%= github.ratelimit_remaining %>
 <br />
-<%= github.exercism_repos.map(&:name).join(", ") %>
+<%= github.exercism_repos.map {|x| x["name"] }%>
 <br />
-<%= github.exercism_contributors.map(&:login).join(", ") %>
